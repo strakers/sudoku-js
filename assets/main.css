@@ -1,0 +1,58 @@
+#bounds { margin: 50px auto; text-align: center; }
+#sudoku { margin: 20px auto; text-align: center; } /* for cross-browser consistency */
+#sudoku .cell {
+    width: 70px;
+    height: 70px;
+    background-color: #CCC;
+    color: #333;
+    padding: 10px;
+    border: 0 none;
+    border-top: 1px solid #222;
+    border-left: 1px solid #222;
+    font-size: 36px;
+    text-align: center;
+}
+#sudoku .cell.c9 { border-right: 1px solid #222; }
+#sudoku .cell.r9 { border-bottom: 1px solid #222; }
+
+#sudoku .cell.q1,
+#sudoku .cell.q3,
+#sudoku .cell.q5,
+#sudoku .cell.q7,
+#sudoku .cell.q9 { background-color: #CC0; }
+
+#sudoku .cell.q2,
+#sudoku .cell.q4,
+#sudoku .cell.q6,
+#sudoku .cell.q8 { background-color: #C90; }
+
+#sudoku .cell.errorRow,
+#sudoku .cell.errorCol,
+#sudoku .cell.errorQuad { background-color: #C33; }
+
+#sudoku.noerrors .cell.q1,
+#sudoku.noerrors .cell.q3,
+#sudoku.noerrors .cell.q5,
+#sudoku.noerrors .cell.q7,
+#sudoku.noerrors .cell.q9 { background-color: #CC0; }
+
+#sudoku.noerrors .cell.q2,
+#sudoku.noerrors .cell.q4,
+#sudoku.noerrors .cell.q6,
+#sudoku.noerrors .cell.q8 { background-color: #C90; }
+
+#sudoku .cell[disabled] { color: #600; }
+
+#sudoku.complete .cell { background-color: #999 !important; }
+
+#sudoku .action {
+    padding: 20px;
+    margin-top:20px;
+}
+
+/* to remove spin buttons on certain browsers/devices */
+#sudoku input::-webkit-outer-spin-button,
+#sudoku input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
