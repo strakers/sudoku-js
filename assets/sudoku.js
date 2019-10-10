@@ -54,7 +54,7 @@
     sudoku.quadrants = q;
 
     // resize sudoku board to fit cells - 3/26 ratio is not yet scalable. to make scalable, need more dimensions for ratio
-    sudoku.board.style.width = Math.floor(inputs[0].clientWidth * inputs.length * 3/26) + "px";
+    sudoku.board.style.width = Math.floor(inputs[0].clientWidth * inputs.length * 3/24) + "px";
 
     // create alias function to return cell row/column/quadrant groupings
     sudoku.board.getGroup = function( className ){ return sudoku.board.getElementsByClassName(className); };

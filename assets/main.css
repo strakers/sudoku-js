@@ -7,13 +7,14 @@
     color: #333;
     padding: 10px;
     border: 0 none;
-    border-top: 1px solid #222;
-    border-left: 1px solid #222;
     font-size: 36px;
     text-align: center;
+    margin: 4px;
+    border-radius: 4px;
 }
-#sudoku .cell.c9 { border-right: 1px solid #222; }
-#sudoku .cell.r9 { border-bottom: 1px solid #222; }
+#sudoku .cell:focus {
+    opacity: .7;
+}
 
 #sudoku .cell.q1,
 #sudoku .cell.q3,
