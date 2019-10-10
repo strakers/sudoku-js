@@ -42,7 +42,7 @@
 #sudoku.noerrors .cell.q6,
 #sudoku.noerrors .cell.q8 { background-color: #C90; }
 
-#sudoku .cell[disabled] { color: #600; }
+#sudoku .cell[disabled] { color: #600; cursor: not-allowed; }
 
 #sudoku.complete .cell { background-color: #999 !important; }
 
