@@ -11,7 +11,7 @@
     defaults.resetText = opts.resetText || "Clear Board";
     defaults.newGameText = opts.newGameText || "New Game";
     defaults.completeMessage = opts.completeMessage || "Congratulations! You have completed the board!";
-    defaults.toggleErrorText = opts.toggleErrorText || ["Hide Error Notifications","Show Error Notifications"];
+    defaults.toggleErrorText = opts.toggleErrorText || ["Hide Errors","Show Errors"];
     defaults.defaultLevel = opts.defaultLevel || "easy";
     defaults.showErrors = opts.showErrors || false;
 
@@ -59,26 +59,31 @@
     // create alias function to return cell row/column/quadrant groupings
     sudoku.board.getGroup = function( className ){ return sudoku.board.getElementsByClassName(className); };
 
+    // create button grouping
+    sudoku.btnGrouper = document.createElement('div');
+    sudoku.btnGrouper.className = "btn-group";
+    sudoku.board.appendChild(sudoku.btnGrouper);
+
     // create button to show/suppress error notifications. v1.2 addition
     sudoku.errorToggler = document.createElement('button');
     sudoku.errorToggler.onclick = function(e){ e.preventDefault(); sudoku.toggleErrorAlerting(); };
-    sudoku.errorToggler.className = "action toggleerror btn btn-info";
+    sudoku.errorToggler.className = "action toggleerror btn btn-warning";
     sudoku.errorToggler.innerHTML = defaults.toggleErrorText[0];
-    sudoku.board.appendChild(sudoku.errorToggler);
-
-    // create reset button
-    sudoku.reset = document.createElement('button');
-    sudoku.reset.onclick = function(e){ e.preventDefault(); sudoku.clear(); };
-    sudoku.reset.className = "action reset btn btn-danger";
-    sudoku.reset.innerHTML = defaults.resetText;
-    sudoku.board.appendChild(sudoku.reset);
+    sudoku.btnGrouper.appendChild(sudoku.errorToggler);
 
     // create new game button
     sudoku.startOver = document.createElement('button');
     sudoku.startOver.onclick = function(e){ e.preventDefault(); sudoku.newGame(defaults.defaultLevel); };
     sudoku.startOver.className = "action startnew btn btn-primary";
     sudoku.startOver.innerHTML = defaults.newGameText;
-    sudoku.board.appendChild(sudoku.startOver);
+    sudoku.btnGrouper.appendChild(sudoku.startOver);
+
+    // create reset button
+    sudoku.reset = document.createElement('button');
+    sudoku.reset.onclick = function(e){ e.preventDefault(); sudoku.clear(); };
+    sudoku.reset.className = "action reset btn btn-warning";
+    sudoku.reset.innerHTML = defaults.resetText;
+    sudoku.btnGrouper.appendChild(sudoku.reset);
 
     /* --------------------------------------------------------------------------- */
 
