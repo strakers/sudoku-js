@@ -69,7 +69,7 @@
     // create reset button
     sudoku.reset = document.createElement('button');
     sudoku.reset.onclick = function(e){ e.preventDefault(); sudoku.clear(); };
-    sudoku.reset.className = "action reset btn btn-error";
+    sudoku.reset.className = "action reset btn btn-danger";
     sudoku.reset.innerHTML = defaults.resetText;
     sudoku.board.appendChild(sudoku.reset);
 
