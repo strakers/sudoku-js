@@ -7,7 +7,7 @@ function sudokuBuilder( opts ){
 
     // create default property container
     defaults = {};
-    defaults.quadrants = opts.quadrants || 9;
+    defaults.quadrants = opts.quadrants % 3 === 0 ? opts.quadrants : 9;
     defaults.resetText = opts.resetText || "Clear Board";
     defaults.newGameText = opts.newGameText || "New Game";
     defaults.completeMessage = opts.completeMessage || "Congratulations! You have completed the board!";
