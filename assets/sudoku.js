@@ -1,4 +1,4 @@
-(function( opts ){
+function sudokuBuilder( opts ){
 
     opts = opts || {};
 
@@ -263,6 +263,6 @@
     // if suppress errors
     if(!defaults.showErrors) sudoku.toggleErrorAlerting();
 
-    window.sudoku = sudoku;
+    return sudoku;
 
-})();
+}
