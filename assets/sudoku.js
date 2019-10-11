@@ -12,7 +12,7 @@ function sudokuBuilder( opts ){
     defaults.newGameText = opts.newGameText || "New Game";
     defaults.completeMessage = opts.completeMessage || "Congratulations! You have completed the board!";
     defaults.toggleErrorText = opts.toggleErrorText || ["Hide Errors","Show Errors"];
-    defaults.defaultLevel = opts.defaultLevel || "easy";
+    defaults.defaultLevel = opts.level || "easy";
     defaults.showErrors = opts.showErrors || false;
 
     /* --------------------------------------------------------------------------- */
